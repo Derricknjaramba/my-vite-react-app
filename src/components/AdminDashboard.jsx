@@ -1,50 +1,50 @@
 import React from 'react';
+import NavBar from './NavBar'; // Adjust path if necessary
 import { Link } from 'react-router-dom';
 
 const AdminDashboard = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gray-50 p-5">
-      <h2 className="text-4xl font-bold mb-8 text-gray-800">Admin Dashboard</h2>
-      <nav className="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg">
-        <ul className="space-y-4">
-          <li>
-            <Link 
-              to="/admin/add-books" 
-              className="block text-center text-lg text-white bg-blue-600 hover:bg-blue-700 rounded-lg py-3 transition duration-200 shadow hover:shadow-md"
-            >
-              Add Books
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/admin/borrowed-books" 
-              className="block text-center text-lg text-white bg-green-600 hover:bg-green-700 rounded-lg py-3 transition duration-200 shadow hover:shadow-md"
-            >
-              Borrowed Books
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/admin/purchased-books" 
-              className="block text-center text-lg text-white bg-yellow-600 hover:bg-yellow-700 rounded-lg py-3 transition duration-200 shadow hover:shadow-md"
-            >
-              Purchased Books
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/admin/lock-user" 
-              className="block text-center text-lg text-white bg-red-600 hover:bg-red-700 rounded-lg py-3 transition duration-200 shadow hover:shadow-md"
-            >
-              Lock User
-            </Link>
-          </li>
-        </ul>
-      </nav>
+    <div>
+      <NavBar />
+      <div className="p-5">
+        <h2 className="text-3xl font-bold mb-4">Admin Dashboard</h2>
+        <p className="mt-2 text-gray-700">Welcome to the Admin Dashboard! You can manage users and books here.</p>
+        
+        <div className="mt-4 p-4 bg-white rounded shadow-md">
+          <h3 className="text-xl font-semibold mb-2">Manage Users</h3>
+          <ul className="space-y-2">
+            <li>
+              <Link to="/admin/lock-user" className="text-blue-500 hover:underline">Lock User</Link>
+            </li>
+            {/* Add more user management links here if needed */}
+          </ul>
+        </div>
+
+        <div className="mt-4 p-4 bg-white rounded shadow-md">
+          <h3 className="text-xl font-semibold mb-2">Manage Books</h3>
+          <ul className="space-y-2">
+            <li>
+              <Link to="/admin/add-books" className="text-blue-500 hover:underline">Add Books</Link>
+            </li>
+            <li>
+              <Link to="/admin/remove-book" className="text-blue-500 hover:underline">Remove Book</Link>
+            </li>
+            <li>
+              <Link to="/admin/borrowed-books" className="text-blue-500 hover:underline">View Borrowed Books</Link>
+            </li>
+            <li>
+              <Link to="/admin/purchased-books" className="text-blue-500 hover:underline">View Purchased Books</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default AdminDashboard;
+
+
+
 
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import NavBar from './NavBar'; // Adjust the path as needed
+import NavBar from './NavBar';
 
 const PurchasedBooks = () => {
   const [purchasedBooks, setPurchasedBooks] = useState([]);
@@ -58,5 +58,7 @@ const PurchasedBooks = () => {
 };
 
 export default PurchasedBooks;
+
+
 
 

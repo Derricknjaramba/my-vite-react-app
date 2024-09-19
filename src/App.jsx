@@ -1,15 +1,15 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
-import AdminDashboard from "./components/AdminDashboard";
-import AddBooks from "./components/AddBooks";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
-import BorrowedBooks from "./components/BorrowedBooks";
-import PurchasedBooks from "./components/PurchasedBooks";
-import BooksToBorrow from "./components/BooksToBorrow";
-import UserDashboard from "./components/UserDashboard";
-import BooksOnSale from "./components/BooksOnSale";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from './components/LandingPage';
+import AdminDashboard from './components/AdminDashboard';
+import AddBooks from './components/AddBooks';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import BorrowedBooks from './components/BorrowedBooks';
+import PurchasedBooks from './components/PurchasedBooks';
+import BooksToBorrow from './components/BooksToBorrow';
+import UserDashboard from './components/UserDashboard';
+import BooksOnSale from './components/BooksOnSale'; // Import the BooksOnSale component
 
 function App() {
   return (
@@ -26,13 +26,16 @@ function App() {
         <Route path="/user/books-to-borrow" element={<BooksToBorrow />} />
         <Route path="/user/borrowed-books" element={<BorrowedBooks />} />
         <Route path="/user/purchased-books" element={<PurchasedBooks />} />
-        <Route path="/user/books-on-sale" element={<BooksOnSale />} />
+        <Route path="/user/books-on-sale" element={<BooksOnSale />} /> {/* Added BooksOnSale route */}
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
+
+
 
 
 

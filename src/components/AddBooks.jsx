@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NavBar from './NavBar'; // Ensure this path is correct
+import NavBar from './NavBar';
 
 const AddBooks = () => {
   const [title, setTitle] = useState('');
@@ -23,8 +23,8 @@ const AddBooks = () => {
       if (response.ok) {
         const result = await response.json();
         setMessage(`Book added successfully: ${result.title}`);
-        setTitle(''); // Clear the title input
-        setAuthor(''); // Clear the author input
+        setTitle('');
+        setAuthor('');
       } else {
         throw new Error('Failed to add the book.');
       }
@@ -72,6 +72,7 @@ const AddBooks = () => {
 };
 
 export default AddBooks;
+
 
 
 
