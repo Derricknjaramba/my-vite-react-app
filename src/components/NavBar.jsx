@@ -1,27 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <nav className="bg-blue-500 p-4">
       <ul className="flex space-x-4">
         <li>
-          <Link to="/admin" className="text-white">Dashboard</Link>
+          <NavLink to="/" className={({ isActive }) => isActive ? 'text-white font-bold' : 'text-white'}>Home</NavLink>
         </li>
         <li>
-          <Link to="/admin/add-books" className="text-white">Add Books</Link>
+          <NavLink to="/admin" className={({ isActive }) => isActive ? 'text-white font-bold' : 'text-white'}>Dashboard</NavLink>
         </li>
         <li>
-          <Link to="/admin/borrowed-books" className="text-white">Borrowed Books</Link>
+          <NavLink to="/admin/add-books" className={({ isActive }) => isActive ? 'text-white font-bold' : 'text-white'}>Add Books</NavLink>
         </li>
         <li>
-          <Link to="/admin/purchased-books" className="text-white">Purchased Books</Link>
+          <NavLink to="/admin/borrowed-books" className={({ isActive }) => isActive ? 'text-white font-bold' : 'text-white'}>Borrowed Books</NavLink>
         </li>
         <li>
-          <Link to="/admin/lock-user" className="text-white">Lock User</Link>
+          <NavLink to="/admin/purchased-books" className={({ isActive }) => isActive ? 'text-white font-bold' : 'text-white'}>Purchased Books</NavLink>
         </li>
         <li>
-          <Link to="/admin/remove-book" className="text-white">Remove Book</Link>
+          <NavLink to="/admin/remove-book" className={({ isActive }) => isActive ? 'text-white font-bold' : 'text-white'}>Remove Book</NavLink>
         </li>
       </ul>
     </nav>
@@ -29,6 +29,9 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+
+
 
 
 
