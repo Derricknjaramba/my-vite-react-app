@@ -1,27 +1,37 @@
 import React, { useState } from 'react';
+import { auth } from '../config/firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
+const AdminsignUp= () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-    // Add your sign-up logic here
     console.log('Signing up with:', { username, email, password });
-    // Example API call to sign up
-    // const response = await fetch('http://localhost:8000/auth/signup/', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ username, email, password }),
-    // });
-    // Handle response...
+    
+    try {
+      // Create a user with email and password
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      // User signed up
+      const user = userCredential.user;
+      console.log('User signed up:', user);
+      navigate('/admin'); // directs to the admin dashboard. 
+
+      // Optionally, store the username in your database here
+    } catch (error) {
+      console.error('Error signing up:', error);
+      // Handle errors (e.g., display error message to user)
+    }
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
+    <div className="flex justify-center items-center h-screen bg-[url('/images/library3.jpg')] bg-cover bg-center">
       <form className="bg-white p-6 rounded shadow-md" onSubmit={handleSignUp}>
-        <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
+        <h2 className="text-2xl font-bold mb-4">Admin Sign Up</h2>
         <div className="mb-4">
           <label className="block mb-2" htmlFor="username">Username:</label>
           <input
@@ -55,15 +65,15 @@ const SignUp = () => {
             className="border rounded w-full p-2"
           />
         </div>
-        <button type="submit" className="bg-green-500 text-white p-2 rounded w-full">
+        <button type="submit" className="bg-blue-500 hover:bg-blue-700 hover:font-semibold text-white p-2 rounded w-full">
           Sign Up
         </button>
         <p className="mt-4">
-          Already have an account? <a href="/admin/signin" className="text-blue-600">Sign In</a>
+          Already have an account? <a href="/adminsignin" className="text-blue-600">Admin Sign Up </a>
         </p>
       </form>
     </div>
   );
 };
 
-export default SignUp;
+export default AdminsignUp;
