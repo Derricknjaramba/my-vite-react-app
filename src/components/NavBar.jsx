@@ -18,9 +18,6 @@ const NavBar = () => {
           <Link to="/admin/purchased-books" className="text-white">Purchased Books</Link>
         </li>
         <li>
-          <Link to="/admin/lock-user" className="text-white">Lock User</Link>
-        </li>
-        <li>
           <Link to="/admin/remove-book" className="text-white">Remove Book</Link>
         </li>
       </ul>

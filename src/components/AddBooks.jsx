@@ -36,7 +36,7 @@ const AddBooks = () => {
   return (
     <div>
       <NavBar />
-      <div className="flex justify-center items-center h-screen bg-gray-100">
+      <div className="flex justify-center items-center h-screen bg-[url('/images/library2.jpg')] bg-cover bg-center ">
         <form className="bg-white p-6 rounded shadow-md" onSubmit={handleAddBook}>
           <h2 className="text-2xl font-bold mb-4">Add New Book</h2>
           <div className="mb-4">
